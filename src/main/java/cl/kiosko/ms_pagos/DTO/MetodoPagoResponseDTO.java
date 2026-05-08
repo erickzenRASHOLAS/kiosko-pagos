@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MetodoPagoResponseDTO {
-    private Long metodoPagoId;
+    private Integer metodoPagoId;
     private String tipoPago;
 }

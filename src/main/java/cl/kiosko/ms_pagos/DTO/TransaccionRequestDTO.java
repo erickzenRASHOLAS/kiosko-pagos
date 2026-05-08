@@ -14,7 +14,7 @@ public class TransaccionRequestDTO {
     private Long ventaId;
 
     @NotNull(message = "El ID del método de pago es obligatorio")
-    private Long metodoPagoId;
+    private Integer metodoPagoId;
 
     @NotNull(message = "El monto es obligatorio")
     @Min(value = 0, message = "El monto no puede ser negativo")

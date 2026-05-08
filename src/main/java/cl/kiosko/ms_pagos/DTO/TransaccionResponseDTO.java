@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TransaccionResponseDTO {
-    private Long id;
+    private Long transaccionId;
     private Long ventaId;
     private Double monto;
     private String estado; // "COMPLETADO", "RECHAZADO", etc, esto se deberia validad

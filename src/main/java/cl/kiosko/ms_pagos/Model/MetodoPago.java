@@ -15,7 +15,7 @@ public class MetodoPago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "metodo_pago_id")
-    private int metodoPagoId;
+    private Integer metodoPagoId;
 
     @NotBlank(message = "el tipo de pago no puede estar vacio")
     @Column(name = "tipo_pago")
