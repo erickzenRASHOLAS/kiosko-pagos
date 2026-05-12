@@ -1,14 +1,13 @@
 package cl.kiosko.ms_pagos.Controller;
 
+import cl.kiosko.ms_pagos.DTO.MetodoPagoRequestDTO;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoResponseDTO;
-import cl.kiosko.ms_pagos.Model.MetodoPago;
 import cl.kiosko.ms_pagos.Service.MetodoPagoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,14 +15,14 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/metodo_pagos")
 public class MetodoPagoController {
+
     @Autowired
     private MetodoPagoService metodoPagoService;
 
     @PostMapping("")
-    public ResponseEntity<MetodoPagoResponseDTO> agregarMetodoPago(@RequestBody MetodoPago metodoPago) {
-        // Como no hay RequestDTO, recibimos y pasamos la entidad MetodoPago directamente
-        MetodoPagoResponseDTO nuevoMetodo = metodoPagoService.saveMetodoPago(metodoPago);
-        // Retornamos el DTO con estado Created
+    public ResponseEntity<MetodoPagoResponseDTO> agregarMetodoPago(@Valid @RequestBody MetodoPagoRequestDTO dto) {
+        // Ahora usamos el RequestDTO con @Valid en lugar de la entidad directa
+        MetodoPagoResponseDTO nuevoMetodo = metodoPagoService.saveMetodoPago(dto);
         return new ResponseEntity<>(nuevoMetodo, HttpStatus.CREATED);
     }
 
@@ -31,7 +30,6 @@ public class MetodoPagoController {
     public ResponseEntity<List<MetodoPagoResponseDTO>> listarMetodosPago() {
         List<MetodoPagoResponseDTO> metodos = metodoPagoService.listMetodoPago();
 
-        // Si no hay nada retorna un noContent
         if (metodos.isEmpty()) {
             return ResponseEntity.noContent().build();
         } else {
@@ -40,10 +38,9 @@ public class MetodoPagoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MetodoPagoResponseDTO> buscarMetodoPagoId(@PathVariable Integer id) { // Recuerda que el ID es Integer
+    public ResponseEntity<MetodoPagoResponseDTO> buscarMetodoPagoId(@PathVariable Integer id) {
         MetodoPagoResponseDTO metodo = metodoPagoService.findMetodoPagoDTO(id);
 
-        //si no encuentra el metodo pago tira una exepción
         if (metodo == null) {
             throw new NoSuchElementException("No existe el método de pago con Id: " + id);
         } else {
@@ -52,10 +49,10 @@ public class MetodoPagoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MetodoPagoResponseDTO> actualizarMetodoPago(@PathVariable Integer id, @RequestBody MetodoPago metodoPago) { // ID Integer y sin RequestDTO
-        MetodoPagoResponseDTO actualizado = metodoPagoService.updateMetodoPago(id, metodoPago);
+    public ResponseEntity<MetodoPagoResponseDTO> actualizarMetodoPago(@PathVariable Integer id, @Valid @RequestBody MetodoPagoRequestDTO dto) {
+        // Al igual que en POST, usamos el RequestDTO y @Valid
+        MetodoPagoResponseDTO actualizado = metodoPagoService.updateMetodoPago(id, dto);
 
-        //igual que antes si no existe, exepción
         if (actualizado == null) {
             throw new NoSuchElementException("No se puede actualizar. El método de pago con ID " + id + " no existe.");
         } else {
@@ -64,11 +61,8 @@ public class MetodoPagoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarMetodoPagoId(@PathVariable Integer id) { // Recuerda que el ID es Integer
-        //si no existe salta la expeción desde el service
+    public ResponseEntity<Void> eliminarMetodoPagoId(@PathVariable Integer id) {
         metodoPagoService.deleteMetodoPago(id);
-        //si NO salta la expeción se borra
         return ResponseEntity.noContent().build();
     }
-
 }

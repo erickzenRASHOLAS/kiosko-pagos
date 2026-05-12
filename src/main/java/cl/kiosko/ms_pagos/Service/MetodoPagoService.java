@@ -1,5 +1,6 @@
 package cl.kiosko.ms_pagos.Service;
 
+import cl.kiosko.ms_pagos.DTO.MetodoPagoRequestDTO;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoResponseDTO;
 import cl.kiosko.ms_pagos.Model.MetodoPago;
 import cl.kiosko.ms_pagos.Repository.MetodoPagoRepository;
@@ -13,46 +14,50 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-@Transactional(readOnly = true) //esto va para optimización no importa realmente en este nivel de codigo pero es buena practica
-//si se quiere agregar un metodo que guarde debe llevar @Transactional solamente (sin true)
 public class MetodoPagoService {
     @Autowired
     private MetodoPagoRepository metodoPagoRepository;
 
     private MetodoPagoResponseDTO makeToMetodoPagoResponseDTO(MetodoPago metodoPago) {
-        log.error("Se Formatea de MetodoPago a DTO");
+        log.info("Se formatea de MetodoPago a DTO"); // Cambiado a info
         return new MetodoPagoResponseDTO(
                 metodoPago.getMetodoPagoId(),
                 metodoPago.getTipoPago()
         );
     }
 
-    // Como no hay RequestDTO, recibimos la entidad MetodoPago directamente
-    public MetodoPagoResponseDTO saveMetodoPago(MetodoPago metodoPago) {
-        log.error("Se Guarda MetodoPago");
-        // metodoPago ya viene con los datos desde el Controller
-        MetodoPago guardado = metodoPagoRepository.save(metodoPago);
+
+// AHORA RECIBE EL DTO (Esto quita el error rojo de tu Controller)
+    public MetodoPagoResponseDTO saveMetodoPago(MetodoPagoRequestDTO dto) {
+        log.info("Se guarda nuevo MetodoPago: {}", dto.getTipoPago());
+
+        MetodoPago metodo = new MetodoPago();
+        metodo.setTipoPago(dto.getTipoPago());
+
+        MetodoPago guardado = metodoPagoRepository.save(metodo);
         return makeToMetodoPagoResponseDTO(guardado);
     }
 
     public List<MetodoPagoResponseDTO> listMetodoPago() {
-        log.error("Se Listan todos los Metodos de Pago");
+        log.info("Se listan todos los Metodos de Pago");
         return metodoPagoRepository.findAll().stream().map(this::makeToMetodoPagoResponseDTO).toList();
     }
 
     // integer porque el id es int no Long
     public MetodoPagoResponseDTO findMetodoPagoDTO(Integer id) {
-        log.error("Se busca el Metodo de Pago de ID {}", id);
+        log.info("Se busca el Metodo de Pago de ID {}", id);
         MetodoPago metodoPago = metodoPagoRepository.findById(id).orElse(null);
         return (metodoPago != null) ? makeToMetodoPagoResponseDTO(metodoPago) : null;
     }
 
     // Como no hay RequestDTO, recibimos la entidad MetodoPago directamente
-    public MetodoPagoResponseDTO updateMetodoPago(Integer id, MetodoPago metodoPagoDatos) {
-        log.error("Se actualiza el Metodo de Pago de ID {}", id);
+    // AHORA RECIBE EL DTO
+    public MetodoPagoResponseDTO updateMetodoPago(Integer id, MetodoPagoRequestDTO dto) {
+        log.info("Se actualiza el Metodo de Pago de ID {}", id);
         MetodoPago metodoAModificar = metodoPagoRepository.findById(id).orElse(null);
+
         if (metodoAModificar != null) {
-            metodoAModificar.setTipoPago(metodoPagoDatos.getTipoPago());
+            metodoAModificar.setTipoPago(dto.getTipoPago()); // Usamos el getTipoPago() del DTO
 
             MetodoPago actualizado = metodoPagoRepository.save(metodoAModificar);
             return makeToMetodoPagoResponseDTO(actualizado);
@@ -61,7 +66,7 @@ public class MetodoPagoService {
     }
 
     public void deleteMetodoPago(Integer id) {
-        log.error("Se elimina el Metodo de Pago de ID {}", id);
+        log.info("Se elimina el Metodo de Pago de ID {}", id);
         if (metodoPagoRepository.existsById(id)) {
             metodoPagoRepository.deleteById(id);
         } else {

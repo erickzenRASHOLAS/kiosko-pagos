@@ -11,6 +11,7 @@ import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
@@ -22,13 +23,15 @@ public class TransaccionService {
 
     @Autowired
     private TransaccionRepository transaccionRepository;
-
     @Autowired
     private MetodoPagoRepository metodoPagoRepository;
+    // INYECTAMOS WEBCLIENT
+    @Autowired
+    private WebClient webClient;
 
     // Foramtea a DTO
     private TransaccionResponseDTO makeToTransaccionResponseDTO(Transaccion transaccion) {
-        log.error("Se Formatea de Transaccion a DTO");
+        log.info("Se formatea de Transaccion a DTO");
 
         MetodoPagoResponseDTO metodoDTO = null;
         if (transaccion.getMetodoPago() != null) {
@@ -39,13 +42,47 @@ public class TransaccionService {
         }
 
         return new TransaccionResponseDTO(
-                transaccion.getTransaccionId(), // O el nombre de tu ID en la entidad
+                transaccion.getTransaccionId(),
                 transaccion.getVentaId(),
                 transaccion.getMonto(),
                 transaccion.getEstado(),
                 metodoDTO
         );
     }
+    /*public TransaccionResponseDTO saveTransaccion(TransaccionRequestDTO dto) {
+        log.info("Iniciando creación de transacción para Venta ID: {}", dto.getVentaId());
+
+        // 1. VALIDAR VENTA EN MICROSERVICIO EXTERNO (ms_ventas)
+        try {
+            webClient.get()
+                    .uri("http://localhost:8080/api/v1/ventas/" + dto.getVentaId())
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+            log.info("Venta ID {} validada correctamente en ms_ventas", dto.getVentaId());
+        } catch (WebClientResponseException.NotFound e) {
+            log.error("La venta ID {} no existe en ms_ventas", dto.getVentaId());
+            throw new NoSuchElementException("La Venta con ID " + dto.getVentaId() + " no existe. No se puede procesar el pago.");
+        } catch (Exception e) {
+            log.error("Error al conectar con ms_ventas: ", e);
+            throw new RuntimeException("Error de comunicación con el servicio de ventas.");
+        }
+
+        // 2. SI EXISTE, PROCEDEMOS A GUARDAR
+        Transaccion transaccion = new Transaccion();
+        transaccion.setVentaId(dto.getVentaId());
+        transaccion.setMonto(dto.getMonto());
+        transaccion.setEstado("COMPLETADO");
+
+        if (dto.getMetodoPagoId() != null) {
+            MetodoPago metodoPago = metodoPagoRepository.findById(dto.getMetodoPagoId())
+                .orElseThrow(() -> new NoSuchElementException("El metodo de pago con ID " + dto.getMetodoPagoId() + " no existe."));
+            transaccion.setMetodoPago(metodoPago);
+        }
+
+        Transaccion guardada = transaccionRepository.save(transaccion);
+        return makeToTransaccionResponseDTO(guardada);
+    }*/
 
 
     public TransaccionResponseDTO saveTransaccion(TransaccionRequestDTO dto) {
