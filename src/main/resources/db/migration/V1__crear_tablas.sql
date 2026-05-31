@@ -7,8 +7,8 @@ CREATE TABLE metodo_pago (
 CREATE TABLE transaccion (
     transaccion_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     venta_id BIGINT NOT NULL,
-    monto DOUBLE NOT NULL,
-    estado VARCHAR(20) NOT NULL,
+    monto_transaccion DOUBLE NOT NULL,
+    estado_transaccion VARCHAR(20) NOT NULL,
     metodo_pago_id INT,
     CONSTRAINT fk_metodo_pago
     FOREIGN KEY (metodo_pago_id)
