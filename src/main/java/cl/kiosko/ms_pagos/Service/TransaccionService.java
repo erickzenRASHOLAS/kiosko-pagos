@@ -1,4 +1,4 @@
-package cl.kiosko.ms_pagos.Service; // Revisa que este paquete sea el correcto en tu proyecto
+package cl.kiosko.ms_pagos.Service;
 
 import cl.kiosko.ms_pagos.Model.MetodoPago;
 import cl.kiosko.ms_pagos.Model.Transaccion;
@@ -124,7 +124,7 @@ public class TransaccionService {
         if (transaccionAModificar != null) {
             transaccionAModificar.setVentaId(dto.getVentaId());
             transaccionAModificar.setMonto(dto.getMonto());
-
+            transaccionAModificar.setEstado(dto.getEstado());
             if (dto.getMetodoPagoId() != null) {
                 MetodoPago metodoPago = metodoPagoRepository.findById(dto.getMetodoPagoId()).orElse(null);
                 if (metodoPago != null) {
