@@ -1102,3 +1102,739 @@
 2026-06-08T22:57:36.763-04:00 DEBUG 7348 --- [pagos] [http-nio-8086-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ExceptionDTO(code=404, type=Not Found, date=Mon Jun 08 22:57:36 GMT-04:00 2026, message=No se puede  (truncated)...]
 2026-06-08T22:57:36.763-04:00 DEBUG 7348 --- [pagos] [http-nio-8086-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.util.NoSuchElementException: No se puede actualizar. La transacción con ID 1 no existe.]
 2026-06-08T22:57:36.763-04:00 DEBUG 7348 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-06-22T21:10:12.456-04:00  INFO 21440 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Starting MsPagosApplication using Java 25.0.2 with PID 21440 (C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes started by erick in C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos)
+2026-06-22T21:10:12.458-04:00 DEBUG 21440 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22T21:10:12.459-04:00  INFO 21440 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:10:14.062-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:10:14.063-04:00 DEBUG 21440 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\
+2026-06-22T21:10:14.064-04:00 DEBUG 21440 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\db\migration (db/migration)
+2026-06-22T21:10:14.065-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:10:14.065-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:10:14.066-04:00 DEBUG 21440 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-06-22T21:10:15.162-04:00  WARN 21440 --- [pagos] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+2026-06-22T21:10:15.184-04:00 ERROR 21440 --- [pagos] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at cl.kiosko.ms_pagos.MsPagosApplication.main(MsPagosApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar:4.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 17 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar:na]
+	... 23 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:964) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 34 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:659) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 37 common frames omitted
+
+2026-06-22T21:11:48.338-04:00  INFO 22496 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Starting MsPagosApplication using Java 25.0.2 with PID 22496 (C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes started by erick in C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos)
+2026-06-22T21:11:48.340-04:00 DEBUG 22496 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22T21:11:48.340-04:00  INFO 22496 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T21:11:49.669-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-06-22T21:11:49.669-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:11:49.669-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-06-22T21:11:49.669-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:11:49.669-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:11:49.670-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:11:49.671-04:00 DEBUG 22496 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\
+2026-06-22T21:11:49.671-04:00 DEBUG 22496 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\db\migration (db/migration)
+2026-06-22T21:11:49.672-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:11:49.672-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:11:49.673-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:11:49.674-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:11:49.674-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:11:49.674-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:11:49.674-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:11:49.674-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-06-22T21:11:50.068-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__crear_tablas.sql
+2026-06-22T21:11:50.069-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__load_default_data.sql
+2026-06-22T21:11:50.079-04:00  INFO 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true (MySQL 8.4)
+2026-06-22T21:11:50.079-04:00 DEBUG 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database Type: MySQL
+2026-06-22T21:11:50.079-04:00 DEBUG 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-9.7.0 (Revision: 0aade1f13bcc98faf7dda5c02e782481eb291f62)
+2026-06-22T21:11:50.080-04:00 DEBUG 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2026-06-22T21:11:50.081-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2026-06-22T21:11:50.081-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2026-06-22T21:11:50.089-04:00  WARN 22496 --- [pagos] [main] o.f.c.internal.database.base.Database    : Using MySQL 8.4 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 8.1.
+2026-06-22T21:11:50.090-04:00 DEBUG 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Scanning for script callbacks ...
+2026-06-22T21:11:50.093-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2026-06-22T21:11:50.099-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2026-06-22T21:11:50.101-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:11:50.107-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:11:50.107-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:11:50.107-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:11:50.107-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:11:50.109-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:11:50.109-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:11:50.109-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:11:50.109-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:11:50.114-04:00  INFO 22496 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `kiosko_pagos`.`flyway_schema_history` does not exist yet
+2026-06-22T21:11:50.115-04:00  INFO 22496 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.016s)
+2026-06-22T21:11:50.119-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `kiosko_pagos`
+2026-06-22T21:11:50.129-04:00  INFO 22496 --- [pagos] [main] org.flywaydb.core.Flyway                 : All configured schemas are empty; baseline operation skipped. A baseline or migration script with a lower version than the baseline version may execute if available. Check the Schemas parameter if this is not intended.
+2026-06-22T21:11:50.133-04:00  INFO 22496 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `kiosko_pagos`.`flyway_schema_history` ...
+2026-06-22T21:11:50.135-04:00 DEBUG 22496 --- [pagos] [main] o.flywaydb.core.internal.parser.Parser   : Parsing  ...
+2026-06-22T21:11:50.139-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 1: CREATE TABLE `kiosko_pagos`.`flyway_schema_history` (
+    `installed_rank` INT NOT NULL,
+    `version` VARCHAR(50),
+    `description` VARCHAR(200) NOT NULL,
+    `type` VARCHAR(20) NOT NULL,
+    `script` VARCHAR(1000) NOT NULL,
+    `checksum` INT,
+    `installed_by` VARCHAR(100) NOT NULL,
+    `installed_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `execution_time` INT NOT NULL,
+    `success` BOOL NOT NULL,
+    CONSTRAINT `flyway_schema_history_pk` PRIMARY KEY (`installed_rank`)
+)
+2026-06-22T21:11:50.140-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 14: CREATE INDEX `flyway_schema_history_s_idx` ON `kiosko_pagos`.`flyway_schema_history` (`success`)
+2026-06-22T21:11:50.140-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: CREATE TABLE `kiosko_pagos`.`flyway_schema_history` (
+    `installed_rank` INT NOT NULL,
+    `version` VARCHAR(50),
+    `description` VARCHAR(200) NOT NULL,
+    `type` VARCHAR(20) NOT NULL,
+    `script` VARCHAR(1000) NOT NULL,
+    `checksum` INT,
+    `installed_by` VARCHAR(100) NOT NULL,
+    `installed_on` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `execution_time` INT NOT NULL,
+    `success` BOOL NOT NULL,
+    CONSTRAINT `flyway_schema_history_pk` PRIMARY KEY (`installed_rank`)
+)
+2026-06-22T21:11:50.157-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2026-06-22T21:11:50.157-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: CREATE INDEX `flyway_schema_history_s_idx` ON `kiosko_pagos`.`flyway_schema_history` (`success`)
+2026-06-22T21:11:50.174-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2026-06-22T21:11:50.174-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Created Schema History table `kiosko_pagos`.`flyway_schema_history`
+2026-06-22T21:11:50.182-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:11:50.187-04:00  INFO 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `kiosko_pagos`: << Empty Schema >>
+2026-06-22T21:11:50.188-04:00 DEBUG 22496 --- [pagos] [main] o.flywaydb.core.internal.parser.Parser   : Parsing V1__crear_tablas.sql ...
+2026-06-22T21:11:50.189-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 2: CREATE TABLE metodo_pago (
+    metodo_pago_id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_pago VARCHAR(50) NOT NULL
+)
+2026-06-22T21:11:50.189-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 7: CREATE TABLE transaccion (
+    transaccion_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    venta_id BIGINT NOT NULL,
+    monto_transaccion DOUBLE NOT NULL,
+    estado_transaccion VARCHAR(20) NOT NULL,
+    metodo_pago_id INT,
+    CONSTRAINT fk_metodo_pago
+    FOREIGN KEY (metodo_pago_id)
+    REFERENCES metodo_pago(metodo_pago_id)
+)
+2026-06-22T21:11:50.191-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Starting migration of schema `kiosko_pagos` to version "1 - crear tablas" ...
+2026-06-22T21:11:50.194-04:00  INFO 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `kiosko_pagos` to version "1 - crear tablas"
+2026-06-22T21:11:50.196-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: CREATE TABLE metodo_pago (
+    metodo_pago_id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_pago VARCHAR(50) NOT NULL
+)
+2026-06-22T21:11:50.206-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2026-06-22T21:11:50.206-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: CREATE TABLE transaccion (
+    transaccion_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    venta_id BIGINT NOT NULL,
+    monto_transaccion DOUBLE NOT NULL,
+    estado_transaccion VARCHAR(20) NOT NULL,
+    metodo_pago_id INT,
+    CONSTRAINT fk_metodo_pago
+    FOREIGN KEY (metodo_pago_id)
+    REFERENCES metodo_pago(metodo_pago_id)
+)
+2026-06-22T21:11:50.220-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 0 rows affected
+2026-06-22T21:11:50.220-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Successfully completed migration of schema `kiosko_pagos` to version "1 - crear tablas"
+2026-06-22T21:11:50.230-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema History table `kiosko_pagos`.`flyway_schema_history` successfully updated to reflect changes
+2026-06-22T21:11:50.234-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:11:50.238-04:00 DEBUG 22496 --- [pagos] [main] o.flywaydb.core.internal.parser.Parser   : Parsing V2__load_default_data.sql ...
+2026-06-22T21:11:50.239-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 1: INSERT INTO metodo_pago (tipo_pago) VALUES ('EFECTIVO')
+2026-06-22T21:11:50.239-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 2: INSERT INTO metodo_pago (tipo_pago) VALUES ('DEBITO')
+2026-06-22T21:11:50.239-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 3: INSERT INTO metodo_pago (tipo_pago) VALUES ('CREDITO')
+2026-06-22T21:11:50.239-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.sqlscript.ParserSqlScript        : Found statement at line 4: INSERT INTO metodo_pago (tipo_pago) VALUES ('TRANSFERENCIA')
+2026-06-22T21:11:50.240-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Starting migration of schema `kiosko_pagos` to version "2 - load default data" ...
+2026-06-22T21:11:50.243-04:00  INFO 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `kiosko_pagos` to version "2 - load default data"
+2026-06-22T21:11:50.243-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: INSERT INTO metodo_pago (tipo_pago) VALUES ('EFECTIVO')
+2026-06-22T21:11:50.245-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 1 row affected
+2026-06-22T21:11:50.245-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: INSERT INTO metodo_pago (tipo_pago) VALUES ('DEBITO')
+2026-06-22T21:11:50.246-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 1 row affected
+2026-06-22T21:11:50.246-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: INSERT INTO metodo_pago (tipo_pago) VALUES ('CREDITO')
+2026-06-22T21:11:50.246-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 1 row affected
+2026-06-22T21:11:50.246-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : Executing SQL: INSERT INTO metodo_pago (tipo_pago) VALUES ('TRANSFERENCIA')
+2026-06-22T21:11:50.247-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.DefaultSqlScriptExecutor       : 1 row affected
+2026-06-22T21:11:50.247-04:00 DEBUG 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Successfully completed migration of schema `kiosko_pagos` to version "2 - load default data"
+2026-06-22T21:11:50.254-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema History table `kiosko_pagos`.`flyway_schema_history` successfully updated to reflect changes
+2026-06-22T21:11:50.259-04:00 DEBUG 22496 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:11:50.266-04:00  INFO 22496 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `kiosko_pagos`, now at version v2 (execution time 00:00.036s)
+2026-06-22T21:11:50.273-04:00 DEBUG 22496 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 55 of 86M
+2026-06-22T21:11:50.854-04:00  WARN 22496 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-22T21:11:52.012-04:00  WARN 22496 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T21:11:52.118-04:00 DEBUG 22496 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2026-06-22T21:11:52.145-04:00 DEBUG 22496 --- [pagos] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T21:11:52.164-04:00 DEBUG 22496 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T21:11:52.199-04:00 DEBUG 22496 --- [pagos] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T21:11:52.214-04:00  WARN 22496 --- [pagos] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+2026-06-22T21:11:52.251-04:00 ERROR 22496 --- [pagos] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at cl.kiosko.ms_pagos.MsPagosApplication.main(MsPagosApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:2008) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1971) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1863) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1833) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1711) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.createOptionalDependency(DefaultListableBeanFactory.java:2351) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 40 common frames omitted
+Caused by: java.lang.TypeNotPresentException: Type org.springframework.boot.autoconfigure.hateoas.HateoasProperties not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ConstructorRepository.computeParameterTypes(ConstructorRepository.java:111) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:87) ~[na:na]
+	at java.base/java.lang.reflect.Executable.getGenericParameterTypes(Executable.java:335) ~[na:na]
+	at java.base/java.lang.reflect.Method.getGenericParameterTypes(Method.java:316) ~[na:na]
+	at org.springframework.core.MethodParameter.getGenericParameterType(MethodParameter.java:499) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.core.MethodParameter.getNestedParameterType(MethodParameter.java:539) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.getDependencyType(DependencyDescriptor.java:357) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1666) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.createOptionalDependency(DefaultListableBeanFactory.java:2351) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 49 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.hateoas.HateoasProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 71 common frames omitted
+
+2026-06-22T21:13:56.593-04:00  INFO 1408 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Starting MsPagosApplication using Java 25.0.2 with PID 1408 (C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes started by erick in C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos)
+2026-06-22T21:13:56.595-04:00 DEBUG 1408 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22T21:13:56.595-04:00  INFO 1408 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T21:13:57.906-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-06-22T21:13:57.906-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:13:57.907-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-06-22T21:13:57.907-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:13:57.907-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:13:57.907-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:13:57.908-04:00 DEBUG 1408 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\
+2026-06-22T21:13:57.908-04:00 DEBUG 1408 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\db\migration (db/migration)
+2026-06-22T21:13:57.909-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:13:57.909-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:13:57.910-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-06-22T21:13:58.218-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__crear_tablas.sql
+2026-06-22T21:13:58.218-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__load_default_data.sql
+2026-06-22T21:13:58.226-04:00  INFO 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true (MySQL 8.4)
+2026-06-22T21:13:58.226-04:00 DEBUG 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database Type: MySQL
+2026-06-22T21:13:58.226-04:00 DEBUG 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-9.7.0 (Revision: 0aade1f13bcc98faf7dda5c02e782481eb291f62)
+2026-06-22T21:13:58.226-04:00 DEBUG 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2026-06-22T21:13:58.227-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2026-06-22T21:13:58.227-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2026-06-22T21:13:58.233-04:00  WARN 1408 --- [pagos] [main] o.f.c.internal.database.base.Database    : Using MySQL 8.4 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 8.1.
+2026-06-22T21:13:58.237-04:00 DEBUG 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Scanning for script callbacks ...
+2026-06-22T21:13:58.238-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2026-06-22T21:13:58.243-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2026-06-22T21:13:58.246-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:13:58.251-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:13:58.251-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:13:58.252-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:13:58.252-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:13:58.253-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:13:58.253-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:13:58.253-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:13:58.253-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:13:58.265-04:00  INFO 1408 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.020s)
+2026-06-22T21:13:58.267-04:00 DEBUG 1408 --- [pagos] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `kiosko_pagos`
+2026-06-22T21:13:58.273-04:00 DEBUG 1408 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:13:58.277-04:00  INFO 1408 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `kiosko_pagos`: 2
+2026-06-22T21:13:58.280-04:00  INFO 1408 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Schema `kiosko_pagos` is up to date. No migration necessary.
+2026-06-22T21:13:58.286-04:00 DEBUG 1408 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 53 of 86M
+2026-06-22T21:13:58.781-04:00  WARN 1408 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-22T21:13:59.823-04:00  WARN 1408 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T21:13:59.925-04:00 DEBUG 1408 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2026-06-22T21:13:59.948-04:00 DEBUG 1408 --- [pagos] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T21:13:59.966-04:00 DEBUG 1408 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T21:13:59.997-04:00 DEBUG 1408 --- [pagos] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T21:14:00.013-04:00  WARN 1408 --- [pagos] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+2026-06-22T21:14:00.045-04:00 ERROR 1408 --- [pagos] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'modelConverterRegistrar' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'modelConverterRegistrar' parameter 0: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar:7.0.7]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar:4.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar:4.0.6]
+	at cl.kiosko.ms_pagos.MsPagosApplication.main(MsPagosApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'collectionModelContentConverter' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unsatisfied dependency expressed through method 'collectionModelContentConverter' parameter 0: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:2008) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1971) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1863) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1833) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1711) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.createOptionalDependency(DefaultListableBeanFactory.java:2351) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hateoasHalProvider' defined in class path resource [org/springdoc/core/configuration/SpringDocHateoasConfiguration.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 40 common frames omitted
+Caused by: java.lang.TypeNotPresentException: Type org.springframework.boot.autoconfigure.hateoas.HateoasProperties not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:120) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ConstructorRepository.computeParameterTypes(ConstructorRepository.java:111) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ConstructorRepository.getParameterTypes(ConstructorRepository.java:87) ~[na:na]
+	at java.base/java.lang.reflect.Executable.getGenericParameterTypes(Executable.java:335) ~[na:na]
+	at java.base/java.lang.reflect.Method.getGenericParameterTypes(Method.java:316) ~[na:na]
+	at org.springframework.core.MethodParameter.getGenericParameterType(MethodParameter.java:499) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.core.MethodParameter.getNestedParameterType(MethodParameter.java:539) ~[spring-core-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.config.DependencyDescriptor.getDependencyType(DependencyDescriptor.java:357) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1666) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.createOptionalDependency(DefaultListableBeanFactory.java:2351) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar:7.0.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar:7.0.7]
+	... 49 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.autoconfigure.hateoas.HateoasProperties
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	... 71 common frames omitted
+
+2026-06-22T21:17:26.811-04:00  INFO 19344 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Starting MsPagosApplication using Java 25.0.2 with PID 19344 (C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes started by erick in C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos)
+2026-06-22T21:17:26.813-04:00 DEBUG 19344 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22T21:17:26.813-04:00  INFO 19344 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:17:28.148-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:17:28.149-04:00 DEBUG 19344 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\
+2026-06-22T21:17:28.150-04:00 DEBUG 19344 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\db\migration (db/migration)
+2026-06-22T21:17:28.151-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:17:28.151-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:17:28.151-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:17:28.152-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:17:28.152-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:17:28.152-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:17:28.152-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:17:28.152-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-06-22T21:17:28.469-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__crear_tablas.sql
+2026-06-22T21:17:28.470-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__load_default_data.sql
+2026-06-22T21:17:28.476-04:00  INFO 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true (MySQL 8.4)
+2026-06-22T21:17:28.476-04:00 DEBUG 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database Type: MySQL
+2026-06-22T21:17:28.476-04:00 DEBUG 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-9.7.0 (Revision: 0aade1f13bcc98faf7dda5c02e782481eb291f62)
+2026-06-22T21:17:28.477-04:00 DEBUG 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2026-06-22T21:17:28.478-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2026-06-22T21:17:28.478-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2026-06-22T21:17:28.485-04:00  WARN 19344 --- [pagos] [main] o.f.c.internal.database.base.Database    : Using MySQL 8.4 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 8.1.
+2026-06-22T21:17:28.488-04:00 DEBUG 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Scanning for script callbacks ...
+2026-06-22T21:17:28.490-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2026-06-22T21:17:28.496-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2026-06-22T21:17:28.499-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:17:28.506-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:17:28.507-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:17:28.507-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:17:28.507-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:17:28.508-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:17:28.508-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:17:28.508-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:17:28.508-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:17:28.520-04:00  INFO 19344 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.022s)
+2026-06-22T21:17:28.523-04:00 DEBUG 19344 --- [pagos] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `kiosko_pagos`
+2026-06-22T21:17:28.529-04:00 DEBUG 19344 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:17:28.532-04:00  INFO 19344 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `kiosko_pagos`: 2
+2026-06-22T21:17:28.534-04:00  INFO 19344 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Schema `kiosko_pagos` is up to date. No migration necessary.
+2026-06-22T21:17:28.541-04:00 DEBUG 19344 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 54 of 86M
+2026-06-22T21:17:29.051-04:00  WARN 19344 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-22T21:17:30.074-04:00  WARN 19344 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T21:17:30.180-04:00 DEBUG 19344 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2026-06-22T21:17:30.204-04:00 DEBUG 19344 --- [pagos] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T21:17:30.224-04:00 DEBUG 19344 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T21:17:30.256-04:00 DEBUG 19344 --- [pagos] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T21:17:30.450-04:00  INFO 19344 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Started MsPagosApplication in 3.997 seconds (process running for 4.554)
+2026-06-22T21:19:07.267-04:00  INFO 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T21:19:07.267-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-22T21:19:07.267-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-22T21:19:07.268-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1f748d43
+2026-06-22T21:19:07.268-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@451393a9
+2026-06-22T21:19:07.268-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-22T21:19:07.268-04:00  INFO 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-22T21:19:07.277-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui.html", parameters={}
+2026-06-22T21:19:07.280-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
+2026-06-22T21:19:07.321-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-22T21:19:07.322-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-22T21:19:07.324-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-06-22T21:19:07.330-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/index.html", parameters={}
+2026-06-22T21:19:07.330-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.330-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.343-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui.css", parameters={}
+2026-06-22T21:19:07.343-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/index.css", parameters={}
+2026-06-22T21:19:07.345-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.345-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-06-22T21:19:07.345-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.345-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-06-22T21:19:07.346-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-initializer.js", parameters={}
+2026-06-22T21:19:07.346-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.346-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.346-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.348-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.350-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.356-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.366-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.369-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.475-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs/swagger-config", parameters={}
+2026-06-22T21:19:07.476-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-06-22T21:19:07.478-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/favicon-32x32.png", parameters={}
+2026-06-22T21:19:07.479-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-06-22T21:19:07.479-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:19:07.479-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8086/api/doc/swagger- (truncated)...]
+2026-06-22T21:19:07.481-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.498-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:07.506-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs", parameters={}
+2026-06-22T21:19:07.507-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-06-22T21:19:07.780-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-06-22T21:19:07.780-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a224150492032303236205061676f7 (truncated)...]
+2026-06-22T21:19:07.780-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:19:15.238-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/transacciones/1", parameters={}
+2026-06-22T21:19:15.239-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to cl.kiosko.ms_pagos.Controller.TransaccionController#buscarTransaccionPorId(Long)
+2026-06-22T21:19:15.241-04:00 ERROR 19344 --- [pagos] [http-nio-8086-exec-1] c.k.ms_pagos.Service.TransaccionService  : Se busca la Transaccion de ID 1
+2026-06-22T21:19:15.241-04:00  INFO 19344 --- [pagos] [http-nio-8086-exec-1] c.k.ms_pagos.Service.TransaccionService  : Se formatea de Transaccion a DTO
+2026-06-22T21:19:15.296-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/hal+json', given [*/*] and supported [application/hal+json, application/vnd.hal+json, application/json, application/yaml]
+2026-06-22T21:19:15.296-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [TransaccionResponseDTO(transaccionId=1, ventaId=13, monto=34112.57, estado=PENDIENTE, metodoPago=Met (truncated)...]
+2026-06-22T21:19:15.321-04:00 DEBUG 19344 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:20:50.966-04:00  INFO 15016 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Starting MsPagosApplication using Java 25.0.2 with PID 15016 (C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes started by erick in C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos)
+2026-06-22T21:20:50.968-04:00 DEBUG 15016 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22T21:20:50.968-04:00  INFO 15016 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:20:52.438-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:20:52.439-04:00 DEBUG 15016 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\
+2026-06-22T21:20:52.439-04:00 DEBUG 15016 --- [pagos] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\erick\Downloads\FullStack\bibliotecaduoc-master\kiosko-pagos\target\classes\db\migration (db/migration)
+2026-06-22T21:20:52.441-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:20:52.441-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:20:52.441-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-06-22T21:20:52.441-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc ...
+2026-06-22T21:20:52.442-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/erick/Downloads/FullStack/bibliotecaduoc-master/kiosko-pagos/target/classes/db/migration
+2026-06-22T21:20:52.442-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__crear_tablas.sql
+2026-06-22T21:20:52.442-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__load_default_data.sql
+2026-06-22T21:20:52.442-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-06-22T21:20:52.750-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__crear_tablas.sql
+2026-06-22T21:20:52.751-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__load_default_data.sql
+2026-06-22T21:20:52.757-04:00  INFO 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true (MySQL 8.4)
+2026-06-22T21:20:52.757-04:00 DEBUG 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database Type: MySQL
+2026-06-22T21:20:52.757-04:00 DEBUG 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-9.7.0 (Revision: 0aade1f13bcc98faf7dda5c02e782481eb291f62)
+2026-06-22T21:20:52.757-04:00 DEBUG 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2026-06-22T21:20:52.758-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2026-06-22T21:20:52.758-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2026-06-22T21:20:52.765-04:00  WARN 15016 --- [pagos] [main] o.f.c.internal.database.base.Database    : Using MySQL 8.4 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 8.1.
+2026-06-22T21:20:52.768-04:00 DEBUG 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Scanning for script callbacks ...
+2026-06-22T21:20:52.769-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2026-06-22T21:20:52.774-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2026-06-22T21:20:52.777-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:20:52.783-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:20:52.783-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:20:52.783-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:20:52.783-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:20:52.784-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:20:52.784-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:20:52.784-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__crear_tablas.sql (filename: V1__crear_tablas.sql)
+2026-06-22T21:20:52.784-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__load_default_data.sql (filename: V2__load_default_data.sql)
+2026-06-22T21:20:52.795-04:00  INFO 15016 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.022s)
+2026-06-22T21:20:52.800-04:00 DEBUG 15016 --- [pagos] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `kiosko_pagos`
+2026-06-22T21:20:52.806-04:00 DEBUG 15016 --- [pagos] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2026-06-22T21:20:52.810-04:00  INFO 15016 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `kiosko_pagos`: 2
+2026-06-22T21:20:52.810-04:00  INFO 15016 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Schema `kiosko_pagos` is up to date. No migration necessary.
+2026-06-22T21:20:52.822-04:00 DEBUG 15016 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 37 of 74M
+2026-06-22T21:20:53.342-04:00  WARN 15016 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-22T21:20:54.406-04:00  WARN 15016 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T21:20:54.505-04:00 DEBUG 15016 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2026-06-22T21:20:54.531-04:00 DEBUG 15016 --- [pagos] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /doc/swagger-ui*/*swagger-initializer.js, /doc/swagger-ui*/**] in 'resourceHandlerMapping'
+2026-06-22T21:20:54.551-04:00 DEBUG 15016 --- [pagos] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-06-22T21:20:54.580-04:00 DEBUG 15016 --- [pagos] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-06-22T21:20:54.825-04:00  INFO 15016 --- [pagos] [main] cl.kiosko.ms_pagos.MsPagosApplication    : Started MsPagosApplication in 4.304 seconds (process running for 5.017)
+2026-06-22T21:21:21.063-04:00  INFO 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T21:21:21.063-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-06-22T21:21:21.063-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-06-22T21:21:21.064-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@4a23be9
+2026-06-22T21:21:21.064-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@71d2bc34
+2026-06-22T21:21:21.065-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-06-22T21:21:21.065-04:00  INFO 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-22T21:21:21.072-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui.html", parameters={}
+2026-06-22T21:21:21.075-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
+2026-06-22T21:21:21.127-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-22T21:21:21.130-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-22T21:21:21.130-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-06-22T21:21:21.145-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-initializer.js", parameters={}
+2026-06-22T21:21:21.149-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:21.168-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:21.292-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs/swagger-config", parameters={}
+2026-06-22T21:21:21.293-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-06-22T21:21:21.295-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-06-22T21:21:21.296-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8086/api/doc/swagger- (truncated)...]
+2026-06-22T21:21:21.315-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:21.322-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs", parameters={}
+2026-06-22T21:21:21.323-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-06-22T21:21:21.592-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-06-22T21:21:21.592-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a224150492032303236205061676f7 (truncated)...]
+2026-06-22T21:21:21.592-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.665-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui.html", parameters={}
+2026-06-22T21:21:25.665-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc#redirectToUi(HttpServletRequest)
+2026-06-22T21:21:25.667-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json, application/yaml]
+2026-06-22T21:21:25.667-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2026-06-22T21:21:25.667-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-06-22T21:21:25.670-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/index.html", parameters={}
+2026-06-22T21:21:25.670-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.672-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.707-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui.css", parameters={}
+2026-06-22T21:21:25.708-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/index.css", parameters={}
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-ui-bundle.js", parameters={}
+2026-06-22T21:21:25.709-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/swagger-initializer.js", parameters={}
+2026-06-22T21:21:25.710-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.710-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.711-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.712-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.712-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.714-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.726-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.839-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs/swagger-config", parameters={}
+2026-06-22T21:21:25.839-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2026-06-22T21:21:25.841-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2026-06-22T21:21:25.841-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/api/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8086/api/doc/swagger- (truncated)...]
+2026-06-22T21:21:25.841-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.842-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/doc/swagger-ui/favicon-32x32.png", parameters={}
+2026-06-22T21:21:25.843-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2026-06-22T21:21:25.844-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:25.848-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v3/api-docs", parameters={}
+2026-06-22T21:21:25.848-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2026-06-22T21:21:25.857-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2026-06-22T21:21:25.858-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{7b226f70656e617069223a22332e312e30222c22696e666f223a7b227469746c65223a224150492032303236205061676f7 (truncated)...]
+2026-06-22T21:21:25.859-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-06-22T21:21:31.641-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/metodo_pagos/3", parameters={}
+2026-06-22T21:21:31.641-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to cl.kiosko.ms_pagos.Controller.MetodoPagoController#buscarMetodoPagoId(Integer)
+2026-06-22T21:21:31.643-04:00  INFO 15016 --- [pagos] [http-nio-8086-exec-5] c.k.ms_pagos.Service.MetodoPagoService   : Se busca el Metodo de Pago de ID 3
+2026-06-22T21:21:31.661-04:00  INFO 15016 --- [pagos] [http-nio-8086-exec-5] c.k.ms_pagos.Service.MetodoPagoService   : Se formatea de MetodoPago a DTO
+2026-06-22T21:21:31.708-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/hal+json', given [*/*] and supported [application/hal+json, application/vnd.hal+json, application/json, application/yaml]
+2026-06-22T21:21:31.708-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [MetodoPagoResponseDTO(metodoPagoId=3, tipoPago=CREDITO)]
+2026-06-22T21:21:31.731-04:00 DEBUG 15016 --- [pagos] [http-nio-8086-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

@@ -1,5 +1,6 @@
 package cl.kiosko.ms_pagos.Controller;
 
+import cl.kiosko.ms_pagos.Assembler.MetodoPagoAssembler;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoRequestDTO;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoResponseDTO;
 import cl.kiosko.ms_pagos.Service.MetodoPagoService;
@@ -7,9 +8,13 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+import java.util.stream.Collectors;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -21,24 +26,34 @@ public class MetodoPagoController {
 
     @Autowired
     private MetodoPagoService metodoPagoService;
+    @Autowired
+    private MetodoPagoAssembler assembler;
 
     @PostMapping("")
     @Operation(summary = "Agregar Metodo de Pago", description = "Se agrega/crea un nuevo metodo de pago")
     public ResponseEntity<MetodoPagoResponseDTO> agregarMetodoPago(@Valid @RequestBody MetodoPagoRequestDTO dto) {
         // Ahora usamos el RequestDTO con @Valid en lugar de la entidad directa
         MetodoPagoResponseDTO nuevoMetodo = metodoPagoService.saveMetodoPago(dto);
-        return new ResponseEntity<>(nuevoMetodo, HttpStatus.CREATED);
+        return new ResponseEntity<>(assembler.toModel(nuevoMetodo), HttpStatus.CREATED);
     }
 
     @GetMapping("")
     @Operation(summary = "Listar Metodos de pago", description = "Busca y muestra Todos los metodos de pago Existentes")
-    public ResponseEntity<List<MetodoPagoResponseDTO>> listarMetodosPago() {
+    public ResponseEntity<CollectionModel<MetodoPagoResponseDTO>> listarMetodosPago() {
         List<MetodoPagoResponseDTO> metodos = metodoPagoService.listMetodoPago();
 
         if (metodos.isEmpty()) {
             return ResponseEntity.noContent().build();
         } else {
-            return ResponseEntity.ok(metodos);
+            // Se transforma la lista y se agrega el link global
+            List<MetodoPagoResponseDTO> metodosConLinks = metodos.stream()
+                    .map(assembler::toModel)
+                    .collect(Collectors.toList());
+
+            CollectionModel<MetodoPagoResponseDTO> collectionModel = CollectionModel.of(metodosConLinks,
+                    linkTo(methodOn(MetodoPagoController.class).listarMetodosPago()).withSelfRel());
+
+            return ResponseEntity.ok(collectionModel);
         }
     }
 
@@ -50,7 +65,7 @@ public class MetodoPagoController {
         if (metodo == null) {
             throw new NoSuchElementException("No existe el método de pago con Id: " + id);
         } else {
-            return ResponseEntity.ok(metodo);
+            return ResponseEntity.ok(assembler.toModel(metodo));
         }
     }
 
@@ -63,7 +78,7 @@ public class MetodoPagoController {
         if (actualizado == null) {
             throw new NoSuchElementException("No se puede actualizar. El método de pago con ID " + id + " no existe.");
         } else {
-            return ResponseEntity.ok(actualizado);
+            return ResponseEntity.ok(assembler.toModel(actualizado));
         }
     }
 

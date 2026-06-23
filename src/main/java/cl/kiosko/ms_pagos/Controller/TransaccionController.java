@@ -1,15 +1,19 @@
 package cl.kiosko.ms_pagos.Controller;
 
+import cl.kiosko.ms_pagos.Assembler.TransaccionAssembler;
 import cl.kiosko.ms_pagos.DTO.*;
 import cl.kiosko.ms_pagos.Service.TransaccionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+import java.util.stream.Collectors;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -20,6 +24,8 @@ public class TransaccionController {
     @Autowired
     private TransaccionService transaccionService;
     //@Valid sirve para que se cumplan los @ que puse anteriormente (ahorra crear if)
+    @Autowired
+    private TransaccionAssembler assembler;
 
 
     @PostMapping("")
@@ -28,19 +34,27 @@ public class TransaccionController {
         // El service se encarga de la lógica de guardado y vinculación
         TransaccionResponseDTO nuevaTransaccion = transaccionService.saveTransaccion(dto);
         // Retornamos el DTO con estado 201 Created
-        return new ResponseEntity<>(nuevaTransaccion, HttpStatus.CREATED);
+        return new ResponseEntity<>(assembler.toModel(nuevaTransaccion), HttpStatus.CREATED);
     }
 
     @GetMapping("")
     @Operation(summary="Lisar Transacciones", description = "Busca y muestra todas las transacciones existentes")
-    public ResponseEntity<List<TransaccionResponseDTO>> listarTransacciones() {
+    public ResponseEntity<CollectionModel<TransaccionResponseDTO>> listarTransacciones() {
         List<TransaccionResponseDTO> transacciones = transaccionService.listTransaccion();
 
         // Si la lista está vacía retornamos 204 No Content
         if (transacciones.isEmpty()) {
             return ResponseEntity.noContent().build();
         } else {
-            return ResponseEntity.ok(transacciones);
+            // Transforma la lista y agrega el link global
+            List<TransaccionResponseDTO> transaccionesConLinks = transacciones.stream()
+                    .map(assembler::toModel)
+                    .collect(Collectors.toList());
+
+            CollectionModel<TransaccionResponseDTO> collectionModel = CollectionModel.of(transaccionesConLinks,
+                    linkTo(methodOn(TransaccionController.class).listarTransacciones()).withSelfRel());
+
+            return ResponseEntity.ok(collectionModel);
         }
     }
 
@@ -53,7 +67,7 @@ public class TransaccionController {
         if (transaccion == null) {
             throw new NoSuchElementException("No existe la transacción con Id: " + id);
         } else {
-            return ResponseEntity.ok(transaccion);
+            return ResponseEntity.ok(assembler.toModel(transaccion));
         }
     }
 
@@ -65,7 +79,7 @@ public class TransaccionController {
         if (actualizada == null) {
             throw new NoSuchElementException("No se puede actualizar. La transacción con ID " + id + " no existe.");
         } else {
-            return ResponseEntity.ok(actualizada);
+            return ResponseEntity.ok(assembler.toModel(actualizada));
         }
     }
 

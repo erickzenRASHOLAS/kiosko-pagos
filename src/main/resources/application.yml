@@ -1,0 +1,44 @@
+server:
+  port: 8086
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: pagos
+  datasource:
+    url: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true
+    username: root
+    password: "" # Se deja en blanco o con comillas vacías si no hay contraseña
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+logging:
+  level:
+    root: WARN
+    org:
+      springframework:
+        web: DEBUG
+      flywaydb: DEBUG
+    cl:
+      kiosko: TRACE
+  file:
+    name: pagos-app.log
+    path: ./logs
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
