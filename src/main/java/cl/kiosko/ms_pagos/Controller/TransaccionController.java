@@ -2,8 +2,9 @@ package cl.kiosko.ms_pagos.Controller;
 
 import cl.kiosko.ms_pagos.Assembler.TransaccionAssembler;
 import cl.kiosko.ms_pagos.DTO.*;
-import cl.kiosko.ms_pagos.Service.TransaccionService;
+import cl.kiosko.ms_pagos.service.TransaccionService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/transacciones")
 @Tag(name="Transaccion", description = "Operaciones relacionadas con las transacciones")
+@SecurityRequirement(name = "bearerAuth")
 public class TransaccionController {
     @Autowired
     private TransaccionService transaccionService;

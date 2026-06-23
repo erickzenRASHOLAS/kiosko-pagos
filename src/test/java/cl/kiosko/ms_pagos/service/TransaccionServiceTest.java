@@ -1,11 +1,11 @@
-package cl.kiosko.ms_pagos.Service;
+package cl.kiosko.ms_pagos.service;
 
 import cl.kiosko.ms_pagos.DTO.TransaccionRequestDTO;
 import cl.kiosko.ms_pagos.DTO.TransaccionResponseDTO;
-import cl.kiosko.ms_pagos.Model.MetodoPago;
-import cl.kiosko.ms_pagos.Model.Transaccion;
-import cl.kiosko.ms_pagos.Repository.MetodoPagoRepository;
-import cl.kiosko.ms_pagos.Repository.TransaccionRepository;
+import cl.kiosko.ms_pagos.model.MetodoPago;
+import cl.kiosko.ms_pagos.model.Transaccion;
+import cl.kiosko.ms_pagos.repository.MetodoPagoRepository;
+import cl.kiosko.ms_pagos.repository.TransaccionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

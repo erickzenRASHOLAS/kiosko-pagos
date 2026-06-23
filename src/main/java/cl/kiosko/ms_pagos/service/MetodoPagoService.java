@@ -1,16 +1,14 @@
-package cl.kiosko.ms_pagos.Service;
+package cl.kiosko.ms_pagos.service;
 
 import cl.kiosko.ms_pagos.DTO.MetodoPagoRequestDTO;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoResponseDTO;
-import cl.kiosko.ms_pagos.Model.MetodoPago;
-import cl.kiosko.ms_pagos.Repository.MetodoPagoRepository;
+import cl.kiosko.ms_pagos.model.MetodoPago;
+import cl.kiosko.ms_pagos.repository.MetodoPagoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j

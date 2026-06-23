@@ -1,4 +1,4 @@
-package cl.kiosko.ms_pagos.Model;
+package cl.kiosko.ms_pagos.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
