@@ -3,7 +3,7 @@ package cl.kiosko.ms_pagos.Controller;
 import cl.kiosko.ms_pagos.Assembler.MetodoPagoAssembler;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoRequestDTO;
 import cl.kiosko.ms_pagos.DTO.MetodoPagoResponseDTO;
-import cl.kiosko.ms_pagos.Service.MetodoPagoService;
+import cl.kiosko.ms_pagos.service.MetodoPagoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

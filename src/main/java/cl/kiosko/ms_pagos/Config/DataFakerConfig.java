@@ -1,9 +1,9 @@
 package cl.kiosko.ms_pagos.Config; // Ajusta tu paquete
 
-import cl.kiosko.ms_pagos.Model.MetodoPago;
-import cl.kiosko.ms_pagos.Model.Transaccion;
-import cl.kiosko.ms_pagos.Repository.MetodoPagoRepository;
-import cl.kiosko.ms_pagos.Repository.TransaccionRepository;
+import cl.kiosko.ms_pagos.model.MetodoPago;
+import cl.kiosko.ms_pagos.model.Transaccion;
+import cl.kiosko.ms_pagos.repository.MetodoPagoRepository;
+import cl.kiosko.ms_pagos.repository.TransaccionRepository;
 import net.datafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

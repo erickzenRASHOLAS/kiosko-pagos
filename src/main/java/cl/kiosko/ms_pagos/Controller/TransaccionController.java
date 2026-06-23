@@ -2,7 +2,7 @@ package cl.kiosko.ms_pagos.Controller;
 
 import cl.kiosko.ms_pagos.Assembler.TransaccionAssembler;
 import cl.kiosko.ms_pagos.DTO.*;
-import cl.kiosko.ms_pagos.Service.TransaccionService;
+import cl.kiosko.ms_pagos.service.TransaccionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

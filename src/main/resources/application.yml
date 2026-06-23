@@ -9,7 +9,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/kiosko_pagos?createDatabaseIfNotExist=true
     username: root
-    password: "" # Se deja en blanco o con comillas vacías si no hay contraseña
+    password: "" # Se deja en blanco o con comillas vacï¿½as si no hay contraseï¿½a
   jpa:
     show-sql: true
     hibernate:
@@ -42,3 +42,10 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /doc/swagger-ui.html
+
+application:
+  security:
+    jwt:
+      secret-key: ClaveSecreta123456789ClaveSecreta123456789ClaveSecreta123456789
+      # Tiempo de vida del token (86400000 ms = 1 dÃ­a)
+      expiration: 86400000
