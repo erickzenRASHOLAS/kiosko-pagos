@@ -8,7 +8,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -23,9 +24,9 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
-@WebMvcTest(MetodoPagoController.class)
+@SpringBootTest
+@AutoConfigureMockMvc(addFilters = false)
 public class MetodoPagoControllerTest {
 
     @Autowired
@@ -37,7 +38,6 @@ public class MetodoPagoControllerTest {
     @MockitoBean
     private MetodoPagoAssembler assembler;
 
-    @Autowired
     private ObjectMapper objectMapper;
 
     private MetodoPagoResponseDTO responseDTO;
@@ -45,6 +45,8 @@ public class MetodoPagoControllerTest {
 
     @BeforeEach
     void setUp() {
+        this.objectMapper = new ObjectMapper();
+
         responseDTO = new MetodoPagoResponseDTO(1, "DEBITO");
         requestDTO = new MetodoPagoRequestDTO();
         requestDTO.setTipoPago("DEBITO");
@@ -107,5 +109,35 @@ public class MetodoPagoControllerTest {
 
         mockMvc.perform(delete("/metodo_pagos/1"))
                 .andExpect(status().isNoContent());
+    }
+
+    @Test
+    void buscarMetodoPagoId_CuandoNoExiste_DeberiaRetornar404() throws Exception {
+        // Simulamos que el servicio lanza una excepción cuando le pasan el ID 99
+        when(metodoPagoService.findMetodoPagoDTO(99)).thenReturn(null);
+
+        mockMvc.perform(get("/metodo_pagos/99"))
+                .andExpect(status().isNotFound());
+
+    }
+    @Test
+    void actualizarMetodoPago_CuandoNoExiste_DeberiaRetornar404() throws Exception {
+        when(metodoPagoService.updateMetodoPago(eq(99), any(MetodoPagoRequestDTO.class))).thenReturn(null);
+
+        mockMvc.perform(put("/metodo_pagos/99")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(requestDTO)))
+                .andExpect(status().isNotFound());
+    }
+    @Test
+    void agregarMetodoPago_ConDatosInvalidos_DeberiaRetornar400() throws Exception {
+        // Mandamos un DTO con datos vacíos o nulos que rompan tus validaciones
+        MetodoPagoRequestDTO badRequestDTO = new MetodoPagoRequestDTO();
+        badRequestDTO.setTipoPago(""); // O null, dependiendo de tu @NotBlank o @NotNull
+
+        mockMvc.perform(post("/metodo_pagos")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(badRequestDTO)))
+                .andExpect(status().isBadRequest()); // Esperamos un 400
     }
 }
