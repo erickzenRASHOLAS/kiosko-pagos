@@ -47,7 +47,7 @@ public class TransaccionControllerTest {
     void setUp() {
         this.objectMapper = new ObjectMapper();
 
-        // 1. Preparamos el DTO anidado del Método de Pago
+        // 1. Preparamos el DTO anidado del Mét odo de Pago
         MetodoPagoResponseDTO metodoPagoResponse = new MetodoPagoResponseDTO(1, "DEBITO");
 
         // 2. Preparamos el DTO de Respuesta
@@ -72,7 +72,7 @@ public class TransaccionControllerTest {
 
     @Test
     void listarTransacciones_CuandoHayDatos_DeberiaRetornar200() throws Exception {
-        // Asumiendo que tu método en el service se llama listTransaccion()
+        // Asumiendo que tu mét odo en el service se llama listTransaccion()
         when(transaccionService.listTransaccion()).thenReturn(Arrays.asList(responseDTO));
 
         mockMvc.perform(get("/transacciones")) // Verifica que tu endpoint sea /transacciones
@@ -91,7 +91,7 @@ public class TransaccionControllerTest {
 
     @Test
     void buscarTransaccionId_CuandoExiste_DeberiaRetornar200() throws Exception {
-        // Asumiendo que tu método en el service se llama findTransaccionDTO
+        // Asumiendo que tu mét odo en el service se llama findTransaccionDTO
         when(transaccionService.findTransaccionDTO(1L)).thenReturn(responseDTO);
 
         mockMvc.perform(get("/transacciones/1"))
